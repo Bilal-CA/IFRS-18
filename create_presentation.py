@@ -8,9 +8,7 @@ from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
-from pptx.util import Inches, Pt
 from pptx.enum.dml import MSO_THEME_COLOR
-import copy
 
 # ── Color Palette ──────────────────────────────────────────────────────────────
 DARK_NAVY    = RGBColor(0x1F, 0x38, 0x64)   # deep navy – primary header/bg
@@ -59,7 +57,6 @@ def no_border(shape):
 
 
 def add_rect(slide, left, top, width, height, color: RGBColor, line_color=None, line_width=Pt(0)):
-    from pptx.util import Emu
     shape = slide.shapes.add_shape(
         1,  # MSO_SHAPE_TYPE.RECTANGLE
         left, top, width, height
